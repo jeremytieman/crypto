@@ -14,7 +14,11 @@ if(NOT Catch2_FOUND)
   set(CMAKE_CXX_FLAGS "-Wall -Wextra -pedantic")
 endif()
 
-add_executable(cryptoTest main.cpp)
+set(SOURCE_FILES
+  caesarTest.cpp
+  vigenereTest.cpp)
+
+add_executable(cryptoTest ${SOURCE_FILES})
 
 target_link_libraries(cryptoTest PRIVATE Catch2::Catch2WithMain)
 target_include_directories(cryptoTest PRIVATE ${CMAKE_SOURCE_DIR}/inc/)
