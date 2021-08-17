@@ -11,5 +11,7 @@ namespace cryptoTest
     REQUIRE(waves::caesar_shift("caesar", 3) == std::string("fdhvdu"));
     REQUIRE(waves::caesar_shift("fdhvdu", -3) == std::string("caesar"));
     REQUIRE(waves::caesar_shift("CAEsar", 3) == std::string("FDHvdu"));
+    REQUIRE(waves::caesar_shift("XYZABC", 3) == std::string("ABCDEF"));
+    REQUIRE(waves::caesar_shift("ABCDEF", -3) == std::string("XYZABC"));
   }
 }
